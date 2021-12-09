@@ -56,7 +56,7 @@ const cars = [
         manufacturer: 'Seat',
         model: 'Ibiza',
         type: 'metano'
-    }
+    },
     {
         manufacturer: 'Audi',
         model: 'R8',
@@ -64,14 +64,15 @@ const cars = [
     },
 ];
 
-const gasolineCars = cars.filter( (auto) >= auto.type === 'benzina');
 
-const dieselCars = cars.filter( (auto) => {
-    auto.type === 'diesel';
-});
+const gasolineCars = cars.filter( (auto) => auto.type.toLowerCase() === 'benzina');
+
+const dieselCars = cars.filter( (auto) => 
+    auto.type.toLowerCase() === 'diesel');
+
 
 const otherCars = cars.filter( (auto) => {
-    return auto.type !== 'benzina' || auto.type !== 'diesel';
+    return auto.type !== 'benzina' && auto.type !== 'diesel';
 });
 
 console.log('Auto a benzina');
@@ -84,3 +85,15 @@ console.log(dieselCars);
 
 console.log('Tutte le altre auto');
 console.log(otherCars);
+
+/*******************************************************************************
+​
+    1- Che cosa fa questo codice?
+    divide le auto nell'oggeto tra autoa benzina, diesel e altro
+    2- Sono presenti errori di sintassi?
+    SI
+    3- Sono presenti errori logici?
+    NO
+​
+​
+*******************************************************************************/
